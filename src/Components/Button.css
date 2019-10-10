@@ -10,3 +10,8 @@ button {
   height: 100%;
   border-radius: 200%;
 }
+
+.matched {
+  background: blue;
+  border: 10px solid;
+}

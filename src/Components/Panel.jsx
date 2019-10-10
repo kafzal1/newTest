@@ -13,17 +13,12 @@ function Panel(props) {
   }
 
   return (
-    <div className="Panel" onClick={wordToCompare}>
+    <div className="Panel">
       {rowArray.map((row, i) => (
-        <Row key={i} word={row} />
+        <Row key={i} word={row} onClick={props.onClick} />
       ))}
     </div>
   );
 }
-
-const wordToCompare = event => {
-  if (typeof event.target.value === "string")
-    console.log(event.target.innerText, "<--- another event within div ");
-};
 
 export default Panel;

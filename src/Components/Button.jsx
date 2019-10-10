@@ -3,8 +3,8 @@ import "./Button.css";
 
 function Button(props) {
   return (
-    <div className="Button">
-      <button>{props.value}</button>
+    <div className={["Button", ...props.type].join(" ")}>
+      <button onClick={props.onClick}>{props.value}</button>
     </div>
   );
 }
