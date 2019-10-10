@@ -11,9 +11,9 @@ function Panel(props) {
   for (let index = 0; index < row; index++) {
     rowArray.push(setSelector.slice(index * col, (index + 1) * col).join(""));
   }
-  console.log(rowArray);
+
   return (
-    <div className="Panel">
+    <div className="Panel" onClick={wordToCompare}>
       {rowArray.map((row, i) => (
         <Row key={i} word={row} />
       ))}
@@ -22,7 +22,8 @@ function Panel(props) {
 }
 
 const wordToCompare = event => {
-  console.log();
+  if (typeof event.target.value === "string")
+    console.log(event.target.innerText, "<--- another event within div ");
 };
 
 export default Panel;
