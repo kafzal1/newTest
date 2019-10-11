@@ -2,12 +2,14 @@ import React from "react";
 import Panel from "./Panel";
 import Question from "./Question";
 import Score from "./Score";
+import HangmanDrawing from "./HangmanDrawing";
 
 function GamePlay(props) {
   return (
     <div className="App">
       <h1 className="intro">Hangman</h1>
       <p>Guess the word!</p>
+      <HangmanDrawing strike={7 - props.score} />
       <Score score={props.score} />
       <Question
         word={props.word}

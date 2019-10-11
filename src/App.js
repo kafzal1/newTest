@@ -7,14 +7,16 @@ import Score from "./Components/Score";
 import GamePlay from "./Components/GamePlay";
 import GameOver from "./Components/GameOver";
 import GameWon from "./Components/GameWon";
+import HangmanDrawing from "./Components/HangmanDrawing";
 
 class App extends Component {
   state = {
-    guessWord: "Word",
+    guessWord: "Paradise",
     charSetSelection: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     matchedChars: [],
     notMatchedChars: [],
-    score: 8
+    score: 7,
+    strike: 9
   };
 
   render() {
@@ -38,6 +40,7 @@ class App extends Component {
       <GameOver />
     );
   }
+
   checkValidity = event => {
     const char = event.target.innerText.toLowerCase();
     if (this.state.guessWord.toLowerCase().indexOf(char) !== -1) {
