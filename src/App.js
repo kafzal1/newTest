@@ -4,13 +4,15 @@ import React, { Component } from "react";
 import Panel from "./Components/Panel";
 import Question from "./Components/Question";
 import Score from "./Components/Score";
+import HangmanDrawing from "./Components/HangmanDrawing";
 
 class App extends Component {
   state = {
     guessWord: "Word",
     charSetSelection: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     matchedChars: [],
-    score: 0
+    score: 0,
+    strike: 9
   };
 
   render() {
@@ -18,6 +20,7 @@ class App extends Component {
       <div className="App">
         <h1 className="intro">Hangman</h1>
         <p>Guess the word!</p>
+        <HangmanDrawing strike={this.state.strike} />
         <Score score={this.state.score} />
         <Question
           word={this.state.guessWord}
