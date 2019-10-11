@@ -8,22 +8,19 @@ function Panel(props) {
   const row = Math.ceil(setSelector.length / col);
   const rowArray = [];
 
+  console.log(props.flag);
+  let flags = props.flag;
   for (let index = 0; index < row; index++) {
     rowArray.push(setSelector.slice(index * col, (index + 1) * col).join(""));
   }
 
   return (
-    <div className="Panel" onClick={wordToCompare}>
+    <div className="Panel" onClick={props.characterComparison}>
       {rowArray.map((row, i) => (
-        <Row key={i} word={row} />
+        <Row key={i} word={row} flag={flags} />
       ))}
     </div>
   );
 }
-
-const wordToCompare = event => {
-  if (typeof event.target.value === "string")
-    console.log(event.target.innerText, "<--- another event within div ");
-};
 
 export default Panel;
