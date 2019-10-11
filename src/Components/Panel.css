@@ -3,6 +3,7 @@
   background-color: brown;
 }
 
-button {
-  background-color: yellowgreen;
+.Panel .matched > button {
+  background: greenyellow !important;
+  cursor: not-allowed;
 }

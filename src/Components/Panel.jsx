@@ -8,16 +8,19 @@ function Panel(props) {
   const row = Math.ceil(setSelector.length / col);
   const rowArray = [];
 
-  console.log(props.flag);
-  let flags = props.flag;
   for (let index = 0; index < row; index++) {
     rowArray.push(setSelector.slice(index * col, (index + 1) * col).join(""));
   }
 
   return (
-    <div className="Panel" onClick={props.characterComparison}>
+    <div className="Panel">
       {rowArray.map((row, i) => (
-        <Row key={i} word={row} flag={flags} />
+        <Row
+          key={i}
+          word={row}
+          onClick={props.onClick}
+          matched={props.matched}
+        />
       ))}
     </div>
   );
