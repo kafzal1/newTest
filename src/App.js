@@ -3,17 +3,22 @@ import React, { Component } from "react";
 
 import Panel from "./Components/Panel";
 import Question from "./Components/Question";
+import Score from "./Components/Score";
 
 class App extends Component {
   state = {
-    guessWord: "Random Word",
+    guessWord: "Word",
     charSetSelection: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    matchedChars: []
+    matchedChars: [],
+    score: 0
   };
 
   render() {
     return (
       <div className="App">
+        <h1 className="intro">Hangman</h1>
+        <p>Guess the word!</p>
+        <Score score={this.state.score} />
         <Question
           word={this.state.guessWord}
           matched={this.state.matchedChars}
@@ -29,10 +34,14 @@ class App extends Component {
   }
   checkValidity = event => {
     const char = event.target.innerText.toLowerCase();
-    if (this.state.guessWord.indexOf(char) !== -1) {
-      this.setState(currentState => {
-        return { matchedChars: [...currentState.matchedChars, char] };
-      });
+    if (this.state.guessWord.toLowerCase().indexOf(char) !== -1) {
+      if (this.state.matchedChars.indexOf(char) === -1)
+        this.setState(currentState => {
+          return {
+            matchedChars: [...currentState.matchedChars, char],
+            score: currentState.score + 1
+          };
+        });
     }
   };
 }
