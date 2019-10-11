@@ -1,0 +1,10 @@
+.GameOverText {
+  font-size: 50px;
+  text-align: center;
+}
+.GameOver {
+  padding-top: 20%;
+  padding-left: 35%;
+  padding-right: 25%;
+  display: inline-block;
+}

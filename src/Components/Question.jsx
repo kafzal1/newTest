@@ -9,6 +9,7 @@ function Question(props) {
         name="question"
         word={props.word}
         matched={props.matched}
+        notMatched={props.notMatched}
       />
     </div>
   );

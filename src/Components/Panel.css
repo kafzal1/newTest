@@ -9,3 +9,8 @@
   background: greenyellow !important;
   cursor: not-allowed;
 }
+
+.Panel .notMatched > button {
+  background: red !important;
+  cursor: not-allowed;
+}

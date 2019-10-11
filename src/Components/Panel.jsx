@@ -20,6 +20,7 @@ function Panel(props) {
           word={row}
           onClick={props.onClick}
           matched={props.matched}
+          notMatched={props.notMatched}
         />
       ))}
     </div>
